@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+    <%- include('../partials/head', {title: 'Carrito de compras', estilo:'/stylesheets/carrito-style.css'}) %>
+    <body>
+    <%- include('../partials/header') %>
+    <main class="main_container">
+        <section class="cart_products">
+            <p class="purchase_warning"> Los productos en el carrito no serán reservados hasta completar la compra</p>
+            <% let carrito= [1,2,3,4] %>
+            <% for(i=0; i < carrito.length; i++) { %> 
+         
+            <div class="added_product">
+              
+                <h3 id= "product_name"> <%=product[i].name %> </h3> 
+                <img src="/images/products/<%=product[i].image %>" alt="product image" id="product_image">
+            <div class="product_info">
+                <!-- <p id="product_quantity"> </p> -->
+                <% if(product.category_id == 1){ %>
+                    <p id= "product_size"> <%= product[i].talles.nombre %></p> 
+                   <% } %>
+                <p id= "product_price">$ <%= product[i].finalPrice%></p> 
+            </div>
+
+            <!-- <div class= "product_info">
+                    <p id= "product_size"> product[i].size </p>
+                </div>
+                 CANTIDAD CON SELECT O CON INPUT? ES UN FORM??  
+                <div class= "product_info">
+                    <p id= "product_price"> product[i].price</p>
+                </div> -->
+                <!-- BOTON PARA QUITAR UN PRODUCTO DEL CARRITO ES UN FORM??  -->
+            </div>
+            <% } %>
+        </section>
+        <section class="checkout"> <!-- QUIZÁ SEA MEJOR DEJAR EL RESUMEN DE LA COMPRA EN OTRA VISTA -->
+            <div class="purchase_summary">
+                <h3 id="checkout_title">Resumen de la compra</h3>
+                <strong id="total_items">Cantidad de artículos  ----------------   </strong>
+                <!-- <span id="value"></span> CAMPO PARA VALOR  --> 
+                <%  let totalPrice=0 %>
+                <% for(i=0; i < carrito.length; i++) { %> 
+                    <% totalPrice = totalPrice + product[i].finalPrice %> 
+                    <p> <%= console.log(totalPrice) %></p>
+                    <%  } %>
+                <strong id="total_price">Precio Total  ---------------- $ <%= totalPrice %>  </strong>
+                <!-- <span id="value"></span> CAMPO PARA VALOR  -->
+            </div>
+            <!-- BOTON PARA IR A "PAGAR" (RESUMEN DE COMPRA) ES UN FORM??  -->
+            <button href="#products_list_view" class="button" id="go_to_pay">
+                <a id="button_link">Ir a pagar</a>
+           </button>
+        </section>
+    </section>
+
+    <!-- section ofertas -->
+    <div>
+        <h1>OFERTAS</h1>
+    </div>
+    <section class="on_sale">
+        <% product.forEach(products=> { %>
+            <% { %>
+                <% if(products.discount > 0){ %>
+                <article class="on_sale_product">
+                    <div class="on_sale_product_details">
+                        <img src="/images/products/<%= products.image %>" alt="imagen-de-producto">
+                        <h3 id="on_sale_product_name">  <%= products.name %> </h3>
+                        <p id="on_sale_product_price">¡Precio! $ <%= products.finalPrice %> </p>
+                        <p id="on_sale_product_discount"> <%= products.discount %> % OFF</p>
+                        <!-- <p>Categoria: <%= products.categorys.nombre %></p> -->
+                        <button type="submit" name="comprar" class="on_sale_btn">
+                            <a class="on_sale_btn_detail" href="/products/detail/<%= products.id %>">Detalles</a>
+                        </button>
+                        <button type="submit" name="comprar" class="on_sale_btn">
+                            Comprar
+                        </button>
+                    </div>
+                </article>
+                <% } %>
+                <% } %>
+                    <% }) %>
+    </section>
+        <!-- <section class="recommended_items">
+            <h3 id="recommended_items_title">Artículos recomendados</h3> --> 
+            <!-- El For de los recomendados aquí
+            <div class="recommended_product">
+                <img src="product[i].image" alt="product image" id="item_image">
+                <p> product[i].name</p>
+            </div>
+            <div class="recommended_product">
+                <img src="product[i].image" alt="product image" id="item_image">
+                <p> product[i].name</p>
+            </div>
+            
+        </section>-->
+    </main>
+    <%- include('../partials/footer') %>
+    <script src="/js/carrito.js"> </script>
+</body>
+</html>
+
+
+
+
+<!--// SECTION ADDED PRODUCT DEL NUEVO CARRITO
+ <main class="main_container">
+        <section class="cart_products">
+            <p class="purchase_warning"> Los productos en el carrito no serán reservados hasta completar la compra</p>
+            <% let carrito= [1,2,3,4] %>
+            <% for(i=0; i < carrito.length; i++) { %> 
+         
+            <div class="added_product">
+              
+                <h3 id= "product_name"> <%=product[i].name %> </h3> 
+                <img src="/images/products/<%=product[i].image %>" alt="product image" id="product_image">
+            <div class="product_info">
+                 <p id="product_quantity"> </p> 
+                <% if(product.category_id == 1){ %>
+                    <p id= "product_size"> <%= product[i].talles.nombre %></p> 
+                   <% } %>
+                <p id= "product_price">$ <%= product[i].finalPrice%></p> 
+            </div>
+
+             <div class= "product_info">
+                    <p id= "product_size"> product[i].size </p>
+                </div>
+                 CANTIDAD CON SELECT O CON INPUT? ES UN FORM??  
+                <div class= "product_info">
+                    <p id= "product_price"> product[i].price</p>
+                </div> -->
+                <!-- BOTON PARA QUITAR UN PRODUCTO DEL CARRITO ES UN FORM??  
+            </div>
+            <% } %>
+        </section> -->

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    
+    <%- include('../partials/head', {title: 'Editar producto', estilo:'/stylesheets/form-style.css'}) %>
+
+    <body>
+        
+        <%- include('../partials/header') %>
+
+        <main>
+            <form action="/products/edit/<%= product.id %>?_method=PUT" method="post" enctype="multipart/form-data" id="form">
+                    
+                <div>         
+                    <h2 class="products-title">Estás editando: <%= product.name %></h2> 
+                </div>
+                
+                <!-- image -->
+                <div class="foto add">
+                    <img src="/images/products/<%= product.image %>" alt="product image" class="product-detail-img">
+                </div>
+                <div class="campo">
+                    <label for="image" class="form-label">Imagen: </label>
+                    <input  type="file" name="image" id="image"  >
+                    <span class="feedback"></span>
+                </div>
+                <% if ( locals.errors && errors.image) { %>
+                    <span class="text-danger">
+                        <%= errors.image.msg %>
+                    </span>
+                <% } %>
+                
+                <!-- name -->
+                <div class="campo">
+                    <label for="name" class="form-label">Nombre:</label>
+                    <input type="text" name="name" id="name" value="<%= product.name %>">
+                    <span class="feedback"></span>
+                </div>
+                <% if ( locals.errors && errors.name) { %>
+                    <span class="text-danger">
+                        <%= errors.name.msg %>
+                    </span>
+                <% } %>
+                
+                
+                <!-- description -->
+                <div class="campo">
+                    <label for="description" class="form-label">Descripción: </label>
+                    <textarea  name="description" id="description" ><%= product.description %></textarea>
+                    <span class="feedback"></span>
+                </div>
+                <% if ( locals.errors && errors.description) { %>
+                    <span class="text-danger">
+                        <%= errors.description.msg %>
+                    </span>
+                <% } %>
+                
+                <!-- price -->
+                <div class="campo">
+                    <label for="price" class="form-label">Precio:</label>
+                    <input type="number" name="price" id="price" placeholder="<%= product.price %>" value="<%= product.price %>">
+                    <span class="feedback"></span>
+                </div>
+                <% if ( locals.errors && errors.price) { %>
+                    <span class="text-danger">
+                        <%= errors.price.msg %>
+                    </span>
+                <% } %>
+                
+                <!-- discount -->
+                <div class="campo">
+                    <label for="price" class="form-label">Descuento:</label>
+                    <input type="number" name="discount" id="discount" placeholder="<%= product.discount %>" value="<%= product.discount %>">
+                    <span class="feedback"></span>
+                </div>
+                <% if ( locals.errors && errors.discount) { %>
+                    <span class="text-danger">
+                        <%= errors.discount.msg %>
+                    </span>
+                <% } %>
+                
+                <!-- category -->
+                <div class="campo">
+                    <label for="category_id" class="form-label">Categoría: </label>
+                    <select name="category_id" id="category_id" class="form-input">
+                       
+                        <option value="<%= product.category_id %>"><%= product.categorys.nombre %></option>
+                       
+                        <% for (i=0; i < allCategorys.length;i++) { %>
+                        <option value="<%= allCategorys[i].id %>"><%= allCategorys[i].nombre %></option>
+                        <% } %>
+
+                    </select>
+                </div>
+                <% if ( locals.errors && errors.category_id) { %>
+                    <span class="text-danger">
+                        <%= errors.category_id.msg %>
+                    </span>
+                <% } %>
+                
+                <!-- Talle -->
+                <% if(product.category_id == 1){%>
+                    <div class="campo">
+                        <label for="talle_id" class="form-label">Talle: </label>
+                        <select name="talle_id" id="talle_id" class="form-input">
+                            <option value="<%= product.talle_id %>"><%= product.talles.nombre %></option>
+                            <!-- cuando se arrgler poder llmar una 4 db poner la funcion -->
+                        </select>
+                    </div>
+                    <% if ( locals.errors && errors.talle_id) { %>
+                        <span class="text-danger">
+                            <%= errors.talle_id.msg %>
+                        </span>
+                    <% } %>
+                <% } %>
+
+                <!-- marca -->
+                <div class="campo">
+                    <label for="marca_id" class="form-label">Marca: </label>
+                    <select name="marca_id" id="marca_id" class="form-input">
+                        <option value="<%= product.marca_id %>"><%= product.marcas.nombre %></option>
+                        <% for (i=0; i < allMarcas.length;i++) { %>
+                            <option value="<%= allMarcas[i].id %>"><%= allMarcas[i].nombre %></option>
+                        <% } %>
+                    </select>
+                </div>
+                <% if ( locals.errors && errors.marca_id) { %>
+                    <span class="text-danger">
+                        <%= errors.marca_id.msg %>
+                    </span>
+                <% } %>
+
+                <!-- stock -->
+                <div class="campo name">
+                    <label for="stock" class="form-label">Stock: </label>
+                    <input type="number" name="stock" id="stock" placeholder="<%= product.stock %>" value="<%= product.stock %>" >
+                    <span class="feedback"></span>
+                </div>
+                <% if ( locals.errors && errors.stock) { %>
+                    <span class="text-danger">
+                        <%= errors.stock.msg %>
+                    </span>
+                <% } %>
+
+
+                <div class="botones">
+                    <button type="submit">Guardar</button>
+                    <button type="reset" >Borrar</button>
+                </div>
+                <a href="/products/delete/<%= product.id %>" class="action-button edit">ELIMINAR PRODUCTO</a>
+            </form>
+        </main>
+
+        <%- include('../partials/footer') %>
+        <!-- <script src="/js/products/productsEdit.js"></script> -->
+    </body>
+</html>

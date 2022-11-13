@@ -1,0 +1,132 @@
+main{
+    background-color: var(--main);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    padding: 3%;
+}
+li h2{
+    padding: 0.5rem;
+    border: 1px solid darkgreen;
+    border-radius: 0.5rem;
+}
+h3{
+    text-align: left;
+    width: auto;
+    padding-right: 1rem;
+
+}
+.title{
+    width: 100%;
+    text-align: center;
+}
+h4, p{
+    display:inline;
+    width: auto;
+}
+
+    main .card{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px;
+        margin: 20px ;
+        background-color: var(--blanco);
+        flex-grow : 0.6;
+        align-items: center;
+        justify-content:center;
+        box-shadow: 0px 0px 10px var(--sombra);
+        width: 90%;
+    }
+
+        .img{
+            border-radius: 10%; 
+            border:solid 1px var(--button);
+            box-shadow: 2px 2px 6px;
+            margin-bottom: 10%;
+        }
+
+        .imgProduct{
+            width: 90%;
+            height: auto;
+        }
+
+        .datos{
+            border-top: 1px solid var(--button);
+            padding: 10% 0;
+            flex-wrap: wrap;
+            width: 100%;
+            border-bottom: 1px solid var(--button);
+        }
+        .dato{
+            width: 100%;
+        }
+
+        .dato p{
+            display: block;
+        }
+
+        .buttons{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        button{
+            margin: 0.5rem;
+        }
+        li{
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            margin: 1rem 0;
+            width: auto;
+        }
+        li i{
+            margin-right: 0.5rem;
+        }
+        
+        p{
+            text-align: justify;
+            width: auto;
+        }
+        .admin{
+            padding: 1rem;
+            background-color: lightgreen;
+            width: 100%;
+            
+        }
+        .admin .buttons{
+            width: 100%;
+        }
+
+        @media (max-width: 43rem){/* Media Breakpoints para celus */
+            main .card{
+                max-width: 100%;
+            }
+        }
+        
+        @media (min-width: 43rem){/* Media Breakpoints para tablet */
+            .imgProduct{
+                width:50%
+            }
+            .datos{
+                width: 50%;
+                padding: 1rem;
+            }
+        }
+        
+        @media (min-width: 62rem){/* Media Breakpoints para Monitor */
+            .imgProduct{
+                width:30%
+            }
+            .datos{
+                width: 70%;
+                padding: 1rem;
+            }
+        }
+        
+        @media (min-width: 82rem){
+        }

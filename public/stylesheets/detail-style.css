@@ -1,0 +1,138 @@
+body{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  
+}
+.title{
+  font-size: 100%;
+  
+}
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 1px;
+}
+.imagen{
+ width: 70%;
+  display: block;
+  margin: auto;
+}
+
+img .imagen {
+    max-width: 320px;
+    width: 100%;
+    border-style: solid;
+}
+
+
+.product-detail-info {
+  border-left: 1px solid var(--light-gray);
+  padding: 15px;
+  height: 100%;
+}
+
+.description{
+  padding: 15px;
+  font-size: 1.8em;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.details{
+  text-align: left;
+}
+.details-font{
+  border-left: 1px solid var(--light-gray);
+  padding: 15px;
+}
+.price {
+  font-size: 100%;
+  text-align: left;
+
+}
+.pago-envio{
+  font-size: 50%;
+  text-align: center;
+}
+.small {
+  font-size: 1.8em;
+  color: var(--green);
+}
+
+.small span {
+  text-decoration: line-through;
+}
+
+.actions-list {
+  margin-bottom: 50px;
+}
+
+.actions-list li {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  padding: 20px 0;
+}
+
+.actions-list i {
+  color: var(--green);
+  font-size: 2em;
+  margin-right: 15px;
+}
+
+.actions-list p {
+  color: var(--gray);
+  font-size: 1.7em;
+  margin: 0;
+}
+
+.compra {
+  background-color: var(--light-blue);
+  font-size: 1.6em;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 15px;
+}
+
+.admins {
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2em;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 30px;
+  margin-top: 15px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.action-button.edit {
+  background-color: chocolate;
+}
+.action-button.delete {
+  background-color: rgb(248, 69, 37);
+}
+@media (min-width:768px){
+  img .imagen {
+    max-width: 768px;
+    width: 100%;
+    border-style: solid;
+}
+
+}
+
+@media (min-width:1000px){
+
+}

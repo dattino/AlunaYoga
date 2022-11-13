@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/head', {title: 'Crear producto' , estilo:'/stylesheets/form-style.css'}) %>
+
+    <body>
+
+        <%- include('../partials/header') %>
+
+        <main class="main-container">
+            <form action="/products/create" method="post" enctype="multipart/form-data">
+                <div>
+                    <h2 class="products-title"> Formulario de Creacion de Productos</i></h2>
+                </div>
+                <!-- name -->
+                <div class="campo">
+                    <label for="name">Nombre: </label>
+                    <input 
+                        type="text" 
+                        name="name" 
+                        id="name"
+                        placeholder="Ingrese el nombre del producto"
+                        value="<%= locals.oldData ? oldData.name : null %>">
+                </div>
+                <% if ( locals.errors && errors.name) { %>
+                    <span class="text-danger">
+                        <%= errors.name.msg %>
+                    </span>
+                <% } %>
+
+                <!-- price -->
+                <div class="campo">
+                    <label for="price">Precio: $</label>
+                    <input 
+                        type="text" 
+                        name="price" 
+                        id="price" 
+                        placeholder="$00.00"
+                        value="<%= locals.oldData ? oldData.price : null %>"
+                    >
+                </div>
+                <% if ( locals.errors && errors.price) { %>
+                    <span class="text-danger">
+                        <%= errors.price.msg %>
+                    </span>
+                <% } %>
+
+                <!-- discount -->
+                <div class="campo">
+                    <label for="price">Descuento: </label>
+                    <input 
+                        type="text" 
+                        name="discount" 
+                        id="discount"
+                        value="<%= locals.oldData ? oldData.discount : null %>"
+                    >
+                </div>
+                <% if ( locals.errors && errors.discount) { %>
+                    <span class="text-danger">
+                        <%= errors.discount.msg %>
+                    </span>
+                <% } %>
+
+                <!-- category -->
+                <div class="campo">
+                    <label for="category_id">Categoría: </label>
+                    <select name="category_id" id="category_id" class="form-input">
+                        <option 
+                                value="<%= locals.oldData ? oldData.category_id : null %>"
+                                >
+                                <% if(locals.oldData && oldData.category_id) { %>
+                                    <%= allCategorys[oldData.category_id - 1].nombre %>
+                                <% }else{ %>
+                                    Sin Categoría 
+                                <% } %>
+                            </option>
+                        <% for (i=0; i < allCategorys.length;i++) { %>
+                            <option 
+                                value="<%= allCategorys[i].id %>"
+                                >
+                                <%= allCategorys[i].nombre %>
+                            </option>
+                        <% } %>
+                    </select>
+                </div>
+                <% if ( locals.errors && errors.category_id) { %>
+                    <span class="text-danger">
+                        <%= errors.category_id.msg %>
+                    </span>
+                <% } %>
+
+                <div class="campo" id="talle">
+                    <label for="talle_id">Talle: </label>
+                    <select 
+                        name="talle_id" 
+                        id="talle_id"
+                        class="form-input"
+                    >
+                    <option 
+                                value="<%= locals.oldData ? oldData.talle_id : null %>"
+                                >
+                                <% if(locals.oldData && oldData.talle_id) { %>
+                                    <%= allTalles[oldData.talle_id].nombre %>
+                                <% }else{ %>
+                                    Sin Talle
+                                <% } %>
+                            </option>
+                        <% for (i=0; i < allTalles.length;i++) { %>
+                            <option value="<%= allTalles[i].id %>">
+                                <%= allTalles[i].nombre %>
+                            </option>
+                        <% } %>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="marca_id">Marca: </label>
+                    <select 
+                        name="marca_id" 
+                        id="marca_id"
+                        class="form-input"
+                    >
+                    <option 
+                        value="<%= locals.oldData ? oldData.marca_id : null %>"
+                        >
+                        <% if(locals.oldData && oldData.marca_id) { %>
+                            <%= allMarcas[oldData.marca_id - 1].nombre %>
+                        <% }else{ %>
+                            Sin Marca 
+                        <% } %>
+                    </option>
+                        <% for (i=0; i < allMarcas.length;i++) { %>
+                            <option value="<%= allMarcas[i].id %>">
+                                <%= allMarcas[i].nombre %>
+                            </option>
+                        <% } %>
+                    </select>
+                </div>
+                <% if ( locals.errors && errors.marca_id) { %>
+                    <span class="text-danger">
+                        <%= errors.marca_id.msg %>
+                    </span>
+                <% } %>
+
+                <div class="campo">
+                    <label for="stock">Stock: </label>
+                    <input 
+                        type="text"
+                        name="stock" 
+                        id="stock"
+                        placeholder="Ingrese la cantidad de stock "
+                        value="<%= locals.oldData ? oldData.stock : null %>">
+                </div>
+                <% if ( locals.errors && errors.stock) { %>
+                    <span class="text-danger">
+                        <%= errors.stock.msg %>
+                    </span>
+                <% } %>
+
+                <!-- image -->
+                <div class="campo">
+                    <label for="image">Imagen: </label>
+                    <input 
+                        type="file" 
+                        name="image"
+                        id="image"
+                        class="nombre_y_apellido"
+                        value="<%= locals.oldData ? oldData.image : null %>"
+                        >
+                </div>
+                <% if ( locals.errors && errors.image) { %>
+                    <span class="text-danger">
+                        <%= errors.image.msg %>
+                    </span>
+                <% } %>
+
+                <!-- description -->
+                <div class="campo">
+                    <label for="description">Descripción: </label>
+                    <textarea 
+                        name="description" 
+                        id="description"
+                        rows="10" 
+                        cols="50"
+                        placeholder="Ingrese una descripción del Producto"
+                        value=""
+                    ><%= locals.oldData ? oldData.description : null %></textarea>
+                </div>
+                <% if ( locals.errors && errors.description) { %>
+                    <span class="text-danger">
+                        <%= errors.description.msg %>
+                    </span>
+                <% } %>
+
+                <div class="botones">
+                    <button
+                        type="submit">Guardar</button>
+                    <button
+                        type="reset">Borrar</button>
+                </div>
+            </form>
+        </main>
+
+        <%- include('../partials/footer') %>
+        <script src="/js/products/productsCreate.js"></script>
+    </body>
+
+</html>

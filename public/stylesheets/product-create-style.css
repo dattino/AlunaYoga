@@ -1,0 +1,101 @@
+main{
+    background-color: var(--main);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    padding: 3%;
+}
+    .main-container{
+        display: flex;
+    }
+    main form{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding: 20px;
+        background-color: var(--blanco);
+        flex-grow : 0.3;
+        align-items: center;
+        box-shadow: 0px 0px 10px var(--sombra);
+    }
+        main form .foto{
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+        }
+            main form .foto i.fa-solid.fa-circle-user{
+                font-size: 5rem;
+            }
+            main form .foto .add{
+                border: none;
+                outline: none;
+                background-color: var(--blanco);
+                position: absolute;
+                right: -1.5rem;
+
+            }
+            main form i.fa-solid.fa-circle-plus{
+                color: var(--button);
+                font-size: 1.5rem;
+
+            }
+
+        main form .casilla{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 3%;
+            border: 1px solid black;
+            border-radius: 10px;
+            width: 90%;
+            margin-top: 2%;
+            margin-bottom: 2%;
+        }
+            main form input{
+                width: 80%;
+                outline: none;
+                border: none;
+            }
+
+        main form .botones{
+            border: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-top: 20px;
+        }
+            main form .botones button{
+                border: none;
+                outline: none;
+                background-color: var(--button);
+                color: var(--blanco);
+                border-radius: 5px;
+                padding: 10px;
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+
+footer div{
+    background-color: var(--footer);
+    height: 10vh;
+}
+
+@media (max-width: 43rem){/* Media Breakpoints para celus */ 
+}
+
+@media (min-width: 43rem){/* Media Breakpoints para tablet */
+}
+
+@media (min-width: 62rem){/* Media Breakpoints para Monitor */
+    main form i.fa-solid.fa-circle-plus:hover{
+        color: var(--botonActivo);
+
+    }
+
+    main form .botones button:hover{
+        background-color: var(--botonActivo);
+    }
+}
+
+@media (min-width: 82rem){
+}

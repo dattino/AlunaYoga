@@ -1,0 +1,87 @@
+/* :root {
+    --header: #FED1DC;
+    --main: whitesmoke;
+    --footer: #FED1DC;
+    --button: #0084A0;
+    --sombra: rgb(100, 100, 100);
+    --transparente: #FED1DC80;
+    --blanco: #FFFFFF;
+    --botonActivo: #0022AA;
+    --logo: #DD6C8E;
+    --logoMain: rgb(98, 2, 128);
+    --link:#0084A0;
+} */
+
+:root {
+    --header: #F4874B;
+    --main: #Ffd19b;
+    --footer: #F4874B;
+    --button: #5C4A72;
+    --linkText: whitesmoke; 
+    --text: whitesmoke;
+    --sombra: rgb(100, 100, 100);
+    --transparente: #FED1DC80;
+    --blanco: #FFFFFF;
+    --botonActivo: #0022AA;
+    --logo: rgb(98, 2, 128);
+    --logoMain: rgb(98, 2, 128);
+    --link:#9C9C9C;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.text-danger{
+    color: darkred;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0.5rem;
+}
+
+main{
+    background-color: var(--main);
+    padding: 3%;
+}
+
+button{
+    border: none;
+    outline: none;
+    background-color: var(--button);
+    color: var(--blanco);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+a{
+    margin: 0;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--linkText);
+    text-shadow: none;
+}
+a i{
+    padding: 0 0.5rem;
+}
+.img{
+    width: 5rem;
+    height: 5rem;
+}
+
+ul{
+    list-style-type: none;
+}
+body{
+    min-height: 100vh;
+}
+
+@media (min-width: 62rem){/* Media Breakpoints para Monitor */
+    button:hover{
+        background-color: var(--botonActivo);
+    }
+}

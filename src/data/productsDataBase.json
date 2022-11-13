@@ -1,0 +1,85 @@
+[
+ {
+  "id": 1,
+  "name": "Ropa Mujer 1editado",
+  "price": "5000",
+  "category": "Indumentaria",
+  "description": "ropa comoda para practicar yoga, incrementar tu chakra y poder alcanzar la ilumincaión.  ",
+  "image": "mujer-1.png",
+  "quality": "T-M",
+  "quantity": "5"
+ },
+ {
+  "id": 2,
+  "name": "Ropa Mujer 2",
+  "price": 5000,
+  "discount": 3,
+  "category": "indumentaria",
+  "subCategory": "mujer",
+  "description": "ropa comoda para practicar yoga, incrementar tu chakra y poder alcanzar la ilumincaión.",
+  "image": "mujer-2.png",
+  "quantity": "5"
+ },
+ {
+  "id": 3,
+  "name": "Remera hombre 1",
+  "price": 50002,
+  "discount": 3,
+  "category": "indumentaria",
+  "subCategory": "hombre",
+  "description": "ropa comoda para practicar yoga, incrementar tu chakra y poder alcanzar la ilumincaión.",
+  "image": "remera-hombre-1.jpg",
+  "quantity": "5"
+ },
+ {
+  "id": 4,
+  "name": "Remera hombre 2",
+  "price": 50002,
+  "discount": 3,
+  "category": "indumentaria",
+  "subCategory": "hombre",
+  "description": "ropa comoda para practicar yoga, incrementar tu chakra y poder alcanzar la ilumincaión.",
+  "image": "remera-hombre-2.jpg",
+  "quantity": "5"
+ },
+ {
+  "id": 6,
+  "name": "Figura Luffy 4th Gear \"Tank Man\"",
+  "price": "25000",
+  "category": "Decorativos",
+  "quality": "",
+  "description": " El tankman dota al cuerpo de Luffy de una increíble dureza gracias al haki: al contrario que su forma de boundman, a la que Cracker, a pesar de estar recubierta con haki, casi fue capaz de cortarla con su espada,[5] en esta forma Cracker no fue capaz de clavar la misma espada en el estómago de Luffy.[6] Además, esta forma incrementa la magnitud y el poder de la ofensiva basada en la compresión de la goma de la forma boundman usando el enorme estómago de Luffy como lanzadera, lo que le permitió derrotar a Cracker disparándole contra sus increíblemente duros soldados de galleta con el gomu gomu no cannonball.[7]  ",
+  "image": "1659740665015-lseven-luffy-tankman-resin-statue.jpg",
+  "quantity": "5"
+ },
+ {
+  "name": "Figura Luffy 4th Gear",
+  "description": "La primera forma del gear 4 se llama boundman (弾む男バウンドマン Baundoman?, lit. «Hombre-Rebote»): Esto provoca que Luffy aumente notablemente su masa muscular de manera similar a como ya hizo con su transformación en Nightmare Luffy, pero con algunas diferencias; ya que con el gear 4 su cuerpo adopta una apariencia más redonda, y es imbuido en busoshoku haki. También se vuelve físicamente más alto, alcanzando de pie los cuatro metros de altura. Como efecto secundario, es incapaz de quedarse quieto en el suelo, y en su lugar constantemente rebota en el acto. También en esta forma es capaz de volar gracias a la propulsión elástica de la goma.\r\n\r\n",
+  "price": "20000",
+  "category": "Decorativos",
+  "quality": "T-L",
+  "id": 7,
+  "image": "1659653521940-14177-logo_OP-MONKEY.D.LUFFY-GEAR4-WANOKUNI_1.jpg",
+  "quantity": "5"
+ },
+ {
+  "name": "Figura Luffy 4th Gear \"Snake Man\"",
+  "description": " En esta forma, Luffy aumenta significativamente, a costa de perder la capacidad de rebotar en el aire,[3] su velocidad y mejora su «python» para cambiar sus brazos de dirección a cada golpe, lo cual es capaz también de realizar en su forma boundman. No obstante, con el snakeman, sus ataques incrementen su velocidad cuanto cambios de dirección realicen; permitiendo a Luffy no solo atacar ferozmente a un enemigo que sea capaz de evitarlo, sino aumentar la velocidad y potencia del ataque hasta que llegue a su objetivo. Además de todo ello, es capaz de atacar a un oponente desde cualquier dirección con facilidad.[10] Esta forma también le permite saltar grandes alturas, como se vio cuando lo hizo desde el fondo de un gran cráter del Mirro-World, aunque se desconoce la comparativa de capacidad de salto con su forma boundman.[10]   ",
+  "price": "30000",
+  "category": "Decorativos",
+  "quality": "",
+  "id": 8,
+  "image": "1659658901856-one-piece-luffy-gear-4-snakeman.jpg",
+  "quantity": "5"
+ },
+ {
+  "name": "Figura Sanji",
+  "description": "aguante la birra   ",
+  "price": "20000000000000000",
+  "category": "Indumentaria",
+  "quality": "",
+  "id": 10,
+  "image": "1661983031567-sanji 1.jpg",
+  "quantity": "5"
+ }
+]

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/head', {title: 'Borrar producto' , estilo:'/stylesheets/delete-style.css'}) %>
+
+    <body>
+
+        <%- include('../partials/header') %>
+            <h1 class="title"> ¿Esta seguro que quiere borrar el producto <% product.name %> ?</h1>
+            <div class="main">
+                <img src="/images/consejoDeBorraro.jpg" alt="imaeb">
+                <p>Recuerda el consejo de Abe Simpson: "Si alguna vez borras un producto, utiliza el borrado
+                    logico, porque al borrar de la base de datos, el mas mínimo dato podría ocasionar grandes
+                    consecuencias en el futuro"</p>
+
+                <form action="productDelete">
+                    <div class="botones">
+                        <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
+                            <button type="submit" class="botones">ELIMINAR PRODUCTO</button>
+                        </form>
+
+                        <a class="botones" href="/products/product-edit/:<%= product.id %>">No</a>
+                    </div>
+                </form>
+            </div>
+
+
+
+
+            <!-- footer -->
+            <%- include('../partials/footer') %>
+                <!-- /footer -->
+
+    </body>
+
+</html>

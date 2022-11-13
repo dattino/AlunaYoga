@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('../partials/head', {title: 'userDetail', estilo:'/stylesheets/form-style.css'}) %>
+    <body>
+        <%- include('../partials/header') %>
+        <main>          
+            <form name="Delete" action="/users/delete/<%= user.id %>?_method=DELETE" method="POST">
+                <h2>Perfil de <%= user.name %> </h2></br>
+
+                <div class="foto">
+                    <label for="imagenUsuario">
+                        <img 
+                            class="img" 
+                            src="/images/users/profileImages/<%= user.avatar%>" 
+                            alt="imagenUsuario"
+                            style="border-radius: 10%; border:solid 1px var(--button);box-shadow: 2px 2px 6px;"
+                        >
+                    </label>
+                </div>
+
+                <div class="campo">
+                    <label for="id">
+                        <i class="fa-solid fa-user"></i>
+                         ID:
+                    </label>
+                    <p style="text-align: center">
+                        <%= user.id%>
+                    </p>
+                </div>
+
+                <div class="campo">
+                    <label for="nombre">
+                        <i class="fa-solid fa-user"></i>
+                         Nombre:
+                    </label>
+                    <p style="text-align: center">
+                        <%= user.name%>
+                    </p>
+                </div>
+
+                <div class="campo">
+                    <label for="apellido">
+                        <i class="fa-solid fa-user"></i>
+                         Apellido:
+                    </label>
+                    <p style="text-align: center">
+                        <%= user.lastName %>
+                    </p>
+                </div>
+                
+                <div class="campo">
+                    <label for="email">
+                        <i class="fa-solid fa-at"></i>
+                         Email:
+                    </label>
+                    <p style="text-align: center">
+                        <%= user.email %> 
+                    </p> 
+                </div>
+                
+                <div class="campo">
+                    <label for="fecha_de_nacimiento">
+                        <i class="fa-solid fa-calendar-days"></i>
+                         Fecha de Nacimiento:
+                    </label>
+                    <p style="text-align: center">
+                        <%= user.birthdate %>
+                    </p>
+                </div>
+                <div class="campo">
+                    <label> ¿Seguro que quiere Eliminar el Usuario de la base de dato?: </label>
+                    <label>
+                        Si
+                        <input 
+                        type="radio" 
+                        name="borrarUser"
+                        id="activarUser"
+                        value= <%= user.id %>
+                        >
+                    </label>
+                        
+                    <label>
+                        No
+                        <input 
+                        type="radio" 
+                        name="borrarUser"
+                        id="desactivarUser"
+                        value="false"
+                        checked
+                        >
+                    </label>
+                </div>
+                <div class="campo">
+                    <label for="password">
+                        <i class="fa-solid fa-unlock">
+                        </i> Contraseña: 
+                    </label>
+                    <input 
+                        type="password" 
+                        name="password" 
+                        id="password" 
+                        placeholder="Contraseña" 
+                        minlength="7"
+                        required>
+                </div>
+                <% if ( locals.errors && errors.password) { %>
+                    <span class="text-danger">
+                        <%= errors.password.msg %>
+                    </span>
+                <% } %>
+
+                    
+                
+                <div class="botones">
+                    <button type="submit">ELIMINAR</button>
+                </div>
+                <div class="forgot">
+                    <a class="text-left" href="/users/detail/<%= user.id %>">Volver</a>
+                </div>
+            </form>
+        </main>
+        <%- include('../partials/footer') %>
+        <script src="/js/users/userDetail.js"></script>
+    </body>
+</html>

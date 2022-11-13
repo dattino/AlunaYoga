@@ -1,0 +1,13 @@
+*{
+    box-sizing: border-box;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+}
+.main img{
+    max-width: 300px;
+}

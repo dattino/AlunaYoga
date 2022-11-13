@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+    <%- include('../partials/head', {title: 'Carrito de compras', estilo:'/stylesheets/carrito-style.css'}) %>
+    <body>
+    <%- include('../partials/header') %>
+    <main class="main_container">
+        <div id="root_section_added_products">
+        </div> 
+        <section class="checkout"> <!-- QUIZÁ SEA MEJOR DEJAR EL RESUMEN DE LA COMPRA EN OTRA VISTA -->
+            <div class="purchase_summary">
+                <h3 id="checkout_title">Resumen de la compra</h3>
+                <strong id="total_items">Cantidad de artículos  ----------------   </strong>
+                <!-- <span id="value"></span> CAMPO PARA VALOR  --> 
+             
+                <strong id="total_price">Precio Total  ---------------- $ " totalPrice"   </strong>
+                <!-- <span id="value"></span> CAMPO PARA VALOR  -->
+            </div>
+            <!-- BOTON PARA IR A "PAGAR" (RESUMEN DE COMPRA) ES UN FORM??  -->
+            <button href="#products_list_view" class="button" id="go_to_pay">
+                <a id="button_link">Ir a pagar</a>
+           </button>
+        </section>
+    </section>
+
+    </main>
+    <%- include('../partials/footer') %>
+    <script type="text/javascript" src="js/products/cart.js"></script>
+</body>
+</html>
+
+
+
+
+
+

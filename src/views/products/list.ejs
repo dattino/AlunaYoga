@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<%- include('../partials/head', {title: 'Lista productos' , estilo:'/stylesheets/list-style.css'}) %>
+
+    <body>
+
+        <%- include('../partials/header') %>
+
+            <main>
+                <a href="/products/create">Nuevo Producto</a>
+                <div class="title">
+                    <h2 class="products-title">Listado de Categorias: <i></i></h2>
+                </div>
+               <div class="list-field">
+                <div class="title">
+                    <h2 class="products-title">Imagen: <i></i></h2>
+                </div>
+                <div class="title">
+                    <h2 class="products-title">Nombre: <i></i></h2>
+                </div>
+                <div class="title">
+                    <h2 class="products-title">Categoria: <i></i></h2>
+                </div>
+                <div class="title">
+                    <h2 class="products-title">Estado: <i></i></h2>
+                </div>
+            </div>
+                <hr>
+                <div class="list">
+                    <% allProducts.forEach(data=> { %>
+                        <% { %>
+                            <div class="list-field">
+                                <!-- imagen -->
+                                <div class="list-img">
+                                    <img src="/images/products/<%= data.image %>">
+                                </div>
+                                <!-- nombre -->
+                                <div class="list-field-text">
+                                    <a href="/products/detail/<%= data.id %>">
+                                        <%= data.name %>
+                                    </a>
+                                </div>
+                                <!-- categotia -->
+                                <div class="list-field-text">
+                                    <a href="">
+                                        <%= data.categorys.nombre %>
+                                    </a>
+                                </div>
+                                <div class="button">
+                                    <% if (data.logicDelete === 1){ %>
+                                    <i class="fa-solid fa-square-check" style="background-color: green ;"></i>
+                                    <% }else{ %>
+                                    <i class="fa-solid fa-square-xmark" style="background-color: red ;"></i>
+                                    <% } %>
+                                </div>
+                            </div>
+                            <hr>
+                            <% } %>
+                                <% }) %>
+                </div>
+
+                <%- include('../partials/footer') %>
+
+    </body>
+
+</html>

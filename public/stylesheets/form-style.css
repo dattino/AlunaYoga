@@ -1,0 +1,198 @@
+main{
+    background-color: var(--main);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    padding: 3%;
+}
+
+input{
+    background-color: lightgrey;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+    main form{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding: 20px;
+        background-color: var(--blanco);
+        flex-grow : 0.3;
+        align-items: center;
+        box-shadow: 0px 0px 10px var(--sombra);
+    }
+    main form div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+    main form div.campo{
+        border: 1px solid black;
+        border-radius: 10px;
+        width: 90%;
+    }
+    main form .file{
+        justify-content: space-around;
+    }
+    main form div.checkbox{
+        justify-content: flex-start;
+        width: 90%;
+    }
+
+    main form .checkbox label{
+        padding-left: 2%;
+        text-transform: uppercase;
+        
+    }
+    main form p{
+        width: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 3%;
+
+    }
+
+    main form .campo{
+        padding: 2%;
+    }
+    
+    main form p input{
+        width: auto;
+        
+    }
+        main form .campo input{
+           width: 65%;
+            outline: none;
+            border: none;
+        }
+
+        main form .campo label{
+            width: 35%;
+             outline: none;
+             border: none;
+         }
+
+        main form i{
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+    main form .foto{
+        border: none;
+    }
+        main form .foto button.add{
+            position: absolute;
+            border: none;
+            outline: none;
+            background-color: var(--button);
+            color: var(--blanco);
+            border-radius: 50%;
+            font-size: 1rem;
+            font-weight: bold;
+            width: 1rem;
+            height: 1rem;
+        }
+        main form .foto i{
+            font-size: 5rem;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        
+        } 
+        
+    main form .botones{
+        border: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 20px;
+    }
+        main form .botones button{
+            border: none;
+            outline: none;
+            background-color: var(--button);
+            color: var(--blanco);
+            border-radius: 5px;
+            padding: 10px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+    main form .forgot{
+        border: none;
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 20px;
+        justify-content:center;
+        width: 100%;
+    }
+        main form .forgot .text-left{
+            text-decoration: none;
+            color: green;
+            width: 50%;
+            justify-content: flex-start;
+        }
+        main form .forgot .text-right{
+            text-decoration: none;
+            color: red;
+            width: 50%;
+           justify-content: flex-end;
+        }
+
+footer div{
+    background-color: var(--footer);
+    height: 10vh;
+}
+
+@media (max-width: 43rem){/* Media Breakpoints para celus */
+}
+
+@media (min-width: 43rem){/* Media Breakpoints para tablet */
+    main form .forgot{
+        border: none;
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 20px;
+        justify-content:space-between;
+    }
+    main form .forgot a{
+        text-decoration: none;
+        color: var(--link);
+        width: auto;
+    }
+
+}
+
+@media (min-width: 62rem){/* Media Breakpoints para Monitor */
+    main form i.fa-solid.fa-circle-plus:hover{
+        color: var(--botonActivo);
+
+    }
+    main form .botones button:hover{
+        background-color: var(--botonActivo);
+    }
+
+    main form .forgot .text-right{
+        color: var(--button);
+    }
+    main form .forgot .text-left{
+        color: var(--button);
+    }
+
+    main form .forgot .text-right:hover{
+        color: red;
+        text-decoration: underline;
+    }
+    main form .forgot .text-left:hover{
+        color: green;
+        text-decoration: underline;
+    }
+}
+
+@media (min-width: 82rem){
+}

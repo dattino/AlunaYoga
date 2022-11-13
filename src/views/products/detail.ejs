@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+<%- include('../partials/head', {title: 'Detalle producto' , estilo:'/stylesheets/productList-style.css'}) %>
+
+	<body>
+		<!-- Header -->
+		<%- include('../partials/header') %>
+
+		<main>
+			<!-- main -->
+			<article class="card">
+				<!-- titulo -->
+
+				<h1 class="title">
+					 <%= product.name %>
+				</h1>
+
+				<!-- imagen -->
+				<img class="imgProduct" src="/images/products/<%= product.image %>" alt="product image">
+
+				<div class="datos">
+					<!-- Descripción -->
+					<div class="dato">
+						<ul>
+							<li>
+								<h5>
+									Descripción:
+								</h5>
+								<p>
+									<%= product.description %>
+								</p>
+							</li>
+							<li>
+								<h5>
+									Categoria: 
+								</h5>
+								<p>
+									<%= product.categorys.nombre %>
+								</p>
+							</li>
+							<% if(product.marcas){ %>
+								<li>
+									<h5>
+										Marca:
+									</h5>
+									<p>
+										<%= product.marcas.nombre %>
+									</p>
+								</li>
+							<% } %>
+							<% if(product.category_id==1){ %>
+								<li>
+									<h5>
+										Talle:
+									</h5>
+									<p>
+										<%= product.talles.nombre %>
+									</p>
+								</li>
+							<% } %>
+
+							<li>
+								<% if ( product.stock> 0) { %>
+									<h4 style="color:darkblue">
+										Stock: <%= product.stock %>
+									</h4>
+								<% } else { %>
+									<h4 style="color:darkgray">
+										Sin stock por el momento
+									</h4>
+								<% } %>
+							</li>
+							<% if(product.discount> 0){ %>
+								<li>
+									<!-- Descuento -->
+									<h3 style="text-decoration:line-through;">
+										Precio: <%= product.price %> $
+									</h3>
+								</li>
+								<li>
+									<h3 style="color:darkred">
+										Descuento: <%= product.discount %> % OFF
+									</h3>
+								</li>
+									
+								<% } %>
+							<li>
+								<h2 style="color:darkgreen">
+									Costo Final: $ <%= product.finalPrice %>
+								</h2>
+							</li>
+						</ul>
+					</div>
+				
+					<!-- cuotas y envio -->
+					<div class="dato">
+						<ul>
+							<li>
+								<i class="fas fa-credit-card"></i> 
+								Pagá en 12 cuotas sin interes
+							</li>
+							<li>
+								<i class="fas fa-store"></i> 
+								Retiro gratis en locales del vendedor
+							</li>
+						</ul>
+					</div>
+			
+					<!-- botones comprar y carrito -->
+					<% if (locals.isLogged) { %>
+						<div class="buttons">
+							<% if(product.logicDelete===1){ %>
+								<div class="buttons compra">
+									<button type="submit" id="<%= product.id %>"class="cart"><i class="fa-solid fa-cart-plus "></i> Agregar al Carrito</button>
+									<button>  <a href="/cart" >
+										Comprar
+									</a>   </button>
+								</div>
+							<% }else {%>
+								<p>
+									Lo sentimos, este producto no se encuentra disponible en estos momentos
+								</p>
+									
+							<% } %>
+						</div>
+					<% } %>
+				</div>
+
+				<!-- --------------Admisnistradores--------------- -->
+				<% if (locals.isLogged && locals.userLogged.isAdmin===true) { %>
+					<div class="admin">
+						<h3 class="title">
+							Hola Admin <%= locals.userLogged.name %>
+						</h3>
+						<div class="buttons">
+							<button>
+								<a href="/products/edit/<%= product.id %>">
+									EDITAR PRODUCTO
+								</a>
+							</button>
+							<% if(product.logicDelete===1){ %>
+								<form action="/products/delete/<%= product.id %>?_method=PUT" method="POST">
+									<button type="submit">
+										ELIMINAR PRODUCTO
+									</button>
+								</form>
+							<% }else {%>
+								<form action="/products/restore/<%= product.id %>?_method=PUT"
+									method="POST">
+									<button type="submit">
+										RESTAURAR PRODUCTO
+									</button>
+								</form>
+							<% } %>
+							<% if(product.image !="default.jpg" ){ %>
+								<form action="/products/delete/img/<%= product.id %>?_method=DELETE" method="POST">
+									<button type="submit">
+										ELIMINAR IMAGEN
+									</button>
+								</form>
+							<% } %>
+						</div>
+					</div>
+				<% } %>
+			</article>
+			<!-- /product detail -->
+		</main>
+		<!-- footer -->
+		<%- include('../partials/footer') %>
+		<!-- /footer -->
+		<script src="/js/products/detail.js"></script>
+	</body>
+
+</html>

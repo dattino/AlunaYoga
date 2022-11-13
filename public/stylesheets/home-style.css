@@ -1,0 +1,127 @@
+.homePage {
+    background-image: url(/images/main/mainBackgroun.jpg);
+    background-size: cover;
+    background-position: 50% 25%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.homePage .logo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    padding-top: 1rem;
+}
+
+    .homePage .logo .imgLogo{
+        width: 100%;
+        text-align: center;
+    }
+        .homePage .logo .imgLogo img{
+            width: 30%;
+            
+        }
+
+    .homePage .logo .textLogo{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    }   
+        .homePage .logo .textLogo h1.nombreLogo{
+            width: 100%;
+            text-align: center;
+            font-family: 'Mr De Haviland', cursive;
+            font-size: 5rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 0;
+            margin-bottom: 0.5rem;
+            color: var(--logoMain);
+            text-shadow: 2px 2px 6px var(--blanco);
+        }
+        .homePage .logo .textLogo h2.nombreLogo{
+            font-size: 2rem;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            color: var(--button);
+            text-shadow: 2px 2px 6px var(--blanco);
+        }
+
+.homePage section.links{
+    display: flex;
+    width: 100%;
+    align-items:center;
+    justify-content: center;
+        
+}
+    .homePage .links .nav{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        font-size: 2rem;
+        align-items:center;
+        justify-content: center;
+        background-color: rgba(255, 235, 205, 0.137);
+    }
+        .homePage .links .nav a{
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            color: var(--logoMain);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+
+@media (max-width: 43rem){/* Media Breakpoints para celus */
+}
+
+@media (min-width: 43rem){/* Media Breakpoints para tablet */
+    .homePage .logo .textLogo{
+        position: absolute;
+        bottom: 1rem;
+        display:flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 100%;
+    }
+        .homePage .logo .textLogo h1.nombreLogo{
+            width: 40%;
+            text-align: right;
+            margin-right: 0.5rem;
+        }
+        .homePage .logo .textLogo h2.nombreLogo{
+            position: relative;
+            margin-left: 0.5rem;
+            width: 40%;
+            text-align: left;
+        }
+    .homePage .links .nav{
+        flex-direction: row;
+        background-color: none;
+        width: 100%;
+    }
+        .homePage .links .nav a{
+            padding: 1rem;
+            color: var(--logoMain);
+        }
+}
+
+@media (min-width: 62rem){/* Media Breakpoints para Monitor */
+    .homePage .links .nav a:hover{
+        color: var(--botonActivo);
+        text-decoration: wavy;
+        text-decoration: underline;
+        transform: scale(1.2);
+        transition: 1s;
+
+    }
+}
+
+@media (min-width: 82rem){
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head', { title: 'Productos' , estilo: '/stylesheets/productos-style.css'}) %>
+    <body>
+        <%- include('../partials/header') %>
+
+        <main class="contenedor-main">
+            <section class="contenedor-main-productos listado">
+                <h1 class="title">Nuestros Productos</h1>
+                <% products.forEach(products => { %>
+                    <article class="contenedor-main-productos-articulos">
+                        <div class="contenedor-main-productos-articulos-imagen">
+                            <img src="/images/products/<%= products.image %>" alt="imagen-de-producto">
+                        </div>
+                        <div class="contenedor-main-productos-articulos-detalles">
+                            <h2>
+                                <%= products.name %>
+                            </h2>
+                            <% if(products.discount==0) { %>
+                                <h2>
+                                    $ <%= products.price %>
+                                </h2>
+                            <% } else { %>
+                                <h2>
+                                    ¡Oferta! $ <%= (products.price
+                                        -(products.price*(products.discount/100))) %>
+                                </h2>
+                                <h2>
+                                    <%= products.discount %> % OFF
+                                </h2>
+                            <% } %>
+                            <h3>
+                                Categoria: <%= products.categorys.nombre %>
+                            </h3>
+                            <h4>
+                                Lanzamiento: <%= products.created_at %>
+                            </h4>
+                            <div class="contenedor-main-productos-articulos-button ">
+                                <div class="action-button edit">
+                                    <a href="/products/detail/<%= products.id %>">Detalles</a>
+                                </div>
+                                <% if(locals.isLogged){%>
+                                    <div class="boton">
+                                        <button type="submit" id="<%=products.id%>" class = "boton_add">
+                                            <i class="fa-solid fa-cart-plus">
+                                            </i> Agregar
+                                        </button>
+                                        <button type="submit" class="comprar" name="comprar"
+                                            id="<%=products.id%>">
+                                            <a href="/cart">
+                                                Comprar
+                                            </a>
+                                        </button>
+                                    </div>
+                                <% } %>
+                            </div>
+                        </div>
+                    </article>
+                <% }) %>
+            </section>
+
+            <!-- section ofertas -->
+            <section class="contenedor-main-productos ofertas" id="ofertas">
+                <h1 class="title">¡¡¡OFERTAS!!!</h1>
+                <button id="retroceder"> < </button>
+                <article class="contenedor-main-productos-articulos" id="stop">
+                    <div class="contenedor-main-productos-articulos-imagen"
+                        id="divImg">
+                        <img alt="imagen-de-producto" id="image">
+                    </div>
+                    <div class="contenedor-main-productos-articulos-detalles">
+                        <h2 id="name">
+                            nombre
+                        </h2>
+                        <h2 id="finalPrice">
+                            ¡Oferta! $
+                        </h2>
+                        <h2 id="discount">
+                            % OFF
+                        </h2>
+                        <h3 id="category">
+                            Categoria:
+                        </h3>
+                        <div class="contenedor-main-productos-articulos-button ">
+                            <div class="action-button edit" id="edit">
+                                <a href="/products/detail/<%= products.id %>">Detalles</a>
+                            </div>
+                            
+                                <div class="boton">
+                                    <button type="submit" id="<%=products.id%>" class = "boton_add">
+                                        <i class="fa-solid fa-cart-plus">
+                                        </i> Agregar
+                                    </button>
+                                    <button type="submit" class="comprar" name="comprar"
+                                        id="<%=products.id%>">
+                                        <a href="/cart">
+                                            Comprar
+                                        </a>
+                                    </button>
+                                </div>
+                            
+                        </div>
+                    </div>
+                </article>
+                <button id="avanzar"> > </button>
+            </section>
+        
+            <!-- section FILTRO -->
+            <div id="root" class="root">
+                <button class="filtro-button" id="filterButton">
+                    <i class="fa-solid fa-filter"></i>
+                </button>
+            </div>
+            <section class="filtro" id="filter">
+                <form action="/products/filter/" method="post" class="filtro-form" value="filter">
+                    <div class="filtro-checkbox">
+                        <!-- //menu categoryas -->
+                        <h3>CATEGORIAS</h3>
+                        <% for (i=0; i < allCategorys.length;i++) { %>
+                            <ul>
+                                <li>
+                                    <label><input type="checkbox" name="category"
+                                            value="<%= allCategorys[i].id %>">
+                                        <%= allCategorys[i].nombre %>
+                                </li>
+                            </ul>
+                        <% } %>
+                    </div>
+                    <div class="filtro-checkbox">
+                        <h3>MARCA</h3>
+                        <% for (i=0; i < allMarcas.length;i++) { %>
+                            <ul>
+                                <li>
+                                    <label><input type="checkbox" name="marca" value="<%= allMarcas[i].id %>">
+                                        <%= allMarcas[i].nombre %>
+                                </li>
+                            </ul>
+                            <% } %>
+                    </div>
+                    <div class="filtro-order">
+                        <h3>ORDEN</h3>
+                        <label>
+                            <input type="radio" name="orderPrice" value="1">
+                            Menor precio
+                        </label>
+                        <label>
+                            <input type="radio" name="orderPrice" value="2">
+                            Mayor precio
+                        </label>
+                        <label>
+                            <input type="radio" name="orderAlfa" value="1">
+                            A-Z
+                        </label>
+                        <label>
+                            <input type="radio" name="orderAlfa" value="2">
+                            Z-A
+                        </label>
+                        <label>
+                            <input type="radio" name="orderDate" value="created_at">
+                            Fecha de lanzamiento
+                        </label>
+                    </div>
+                    <div class="filtro-order">
+                        <button type="submit" class="filtro-buttons">Filtrar</button>
+                        <button type="reset" class="filtro-buttons">Restablecer</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+        <%- include('../partials/footer') %>
+        <script src="/js/products/products.js"></script>
+    </body>
+</html>

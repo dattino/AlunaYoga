@@ -1,0 +1,126 @@
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--footer);
+}
+    footer section{
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    footer section.preguntasFrecuentes{
+        border-top: 0.1rem dashed var(--sombra);
+    }
+
+    footer section.copyright{
+        padding-top: 1rem;
+        padding-bottom: 0;
+        border-top: none;
+    }
+
+    footer .redesSociales{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        text-decoration: none;
+        align-items: center;
+        justify-content: center;
+    }
+        footer .redesSociales a{
+            text-align: center;
+            width: 50%;
+            padding: 1rem;
+        }
+        footer .redesSociales i{
+            font-size: 2rem;
+        }
+    footer .preguntasFrecuentes{
+        width: 100%;
+        align-items: center;   
+    }
+        footer .preguntasFrecuentes a{
+            text-decoration: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            text-align: center;
+        }
+        footer .preguntasFrecuentes i{
+            font-size: 2rem;
+        }
+        footer .preguntasFrecuentes p{
+            font-size: 2rem;
+            width: 70%;
+        }
+        
+    footer .copyright{
+        width: 100%;
+        color: var(--sombra);
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+@media (max-width: 43rem){/* Media Breakpoints para celus */
+}
+
+@media (min-width: 43rem){/* Media Breakpoints para tablet */
+    footer .redesSociales a{
+    width: 25%;
+    }
+    footer .preguntasFrecuentes p{
+        width: auto;
+    
+    }
+    footer .copyright{
+        text-align: right;
+        padding-right: 0.5rem;
+    }
+}
+
+@media (min-width: 62rem){/* Media Breakpoints para Monitor */
+    
+    footer .redesSociales{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 50%;
+        border-right: 0.1rem dashed var(--sombra);
+    }
+
+    footer section.preguntasFrecuentes{
+        width: 50%;
+        border-top: none;
+    }
+    
+    footer .redesSociales a:hover i{
+        color: var(--botonActivo);
+    } 
+    
+    footer .preguntasFrecuentes a:hover p{
+        color: var(--botonActivo);
+        text-decoration: underline var(--botonActivo)
+    }
+
+    footer .preguntasFrecuentes a:hover i{
+        color: var(--botonActivo);
+    }
+    
+    header .logo:hover h1{
+        text-decoration: underline var(--Logo);
+    }
+    header .logo:hover i{
+        box-shadow: 0px 0px 10px var(--Logo);
+    }
+
+    header .SearchBar button:hover{
+        background-color: var(--botonActivo);
+    }
+}
+
+@media (min-width: 82rem){/* Media Breakpoints para 4k */
+}

@@ -1,0 +1,49 @@
+
+  .title{
+    font-size: 100%;
+    font-weight: 400;
+    display: block;
+  }
+
+.list{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.list-img img{
+  max-width: 50px;
+  max-height: 50px;
+}
+.list-field{
+  align-items: stretch;
+  justify-content: space-around;
+  align-content: space-around;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+.list-form{
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.list-field-name{
+    width: 60%;
+}
+.button{
+width: 20%;
+}
+@media (max-width: 43rem){/* Media Breakpoints para celus */ 
+}
+
+@media (min-width: 43rem){/* Media Breakpoints para tablet */
+}
+
+@media (min-width: 62rem){/* Media Breakpoints para Monitor */
+
+
+}
+
+@media (min-width: 82rem){
+}

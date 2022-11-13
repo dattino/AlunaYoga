@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/head', {title: 'Ingresar' , estilo:'/stylesheets/form-style.css'}) %>
+
+
+    <body>
+
+        <%- include('../partials/header') %>
+
+            <main>
+                <form name="Login" action="/users/login" method="post">
+                    <h1>¡Ingresar!</h1>
+                    <div class="foto">
+                        <i class="fa-solid fa-circle-user"></i>
+                    </div>
+
+                    <div class="campo">
+                        <label for="">
+                            <i class="fa-solid fa-at">
+                            </i> e-mail: 
+                        </label>
+                        <input 
+                            type="email" 
+                            name="email" 
+                            id="email" 
+                            placeholder="e-mail" 
+                            required
+                        >
+                    </div>
+
+                    <% if ( locals.errors && errors.email) { %>
+                        <span class="text-danger">
+                            <%= errors.email.msg %>
+                        </span>
+                    <% } %>
+
+
+                    <div class="campo">
+                        <label for="">
+                            <i class="fa-solid fa-unlock">
+                            </i> Contraseña: 
+                        </label>
+                        <input 
+                            type="password" 
+                            name="password" 
+                            id="password" 
+                            placeholder="Contraseña" 
+                            minlength="7"
+                            required
+                        >
+                    </div>
+                    <% if ( locals.errors && errors.password) { %>
+                        <span class="text-danger">
+                            <%= errors.password.msg %>
+                        </span>
+                    <% } %>
+
+                    <div class="checkbox">
+                        <input type="checkbox" name="recordar">
+                        <label>
+                            Recordar Usuario
+                        </label>
+                    </div>
+
+                    <div class="botones">
+                        <button type="submit">Ingresar</button>
+                    </div>
+
+                    <div class="forgot">
+                        <a class="text-left" href="/users/register">¡Crear usuario!</a>
+                        <a class="text-right" href="/">¿Olvidó su contraseña?</a>
+                    </div>
+                </form>
+            </main>
+
+            <%- include('../partials/footer') %>
+            <script src="/js/users/userLogin.js"></script>
+    </body>
+
+</html>

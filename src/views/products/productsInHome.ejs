@@ -1,0 +1,61 @@
+<main class="contenedor-main">
+    <div class="contenedor-main-padre">
+        <section class="contenedor-main-productos">
+
+
+            <!-- section ofertas -->
+            <section class="contenedor-main-productos" id="ofertas">
+                <h1 class="title">¡¡¡OFERTAS!!!</h1>
+                <button id="retroceder">
+                    < </button>
+                        <article class="contenedor-main-productos-articulos" id="stop">
+
+                            <div class="contenedor-main-productos-articulos-imagen" id="divImg">
+                                <img alt="imagen-de-producto" id="image">
+                            </div>
+                            <div class="contenedor-main-productos-articulos-detalles">
+                                <div>
+                                    <h2 id="name">
+                                        nombre
+                                    </h2>
+                                </div>
+                                <div>
+
+                                </div>
+                                <div>
+                                    <h2 id="finalPrice">
+                                        ¡Oferta! $
+                                    </h2>
+                                </div>
+
+                                <div>
+                                    <h2 id="discount">
+                                        % OFF
+                                    </h2>
+                                </div>
+
+                                <div>
+                                    <h3 id="category">
+                                        Categoria:
+                                    </h3>
+                                </div>
+                                <div class="action-button edit">
+                                    <a id="edit">Detalles</a>
+                                </div>
+                                <div class="contenedor-main-productos-articulos-button">
+                                    <form id="product" action="/products">
+                                        <!-- <button><i class="fa-solid fa-cart-plus"></i></button> -->
+                                        <button type="submit" name="comprar" id="comprar">
+                                            Comprar
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </article>
+
+                        <button id="avanzar"> > </button>
+            </section>
+        </section>
+    </div>
+    <script src="/public/js/products/products.js"></script>
+</main>

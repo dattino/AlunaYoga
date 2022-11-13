@@ -1,0 +1,66 @@
+
+main{
+    background-color: var(--main);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    padding: 3%;
+}
+.title{
+    width: 100%;
+    text-align: center;
+}
+h4, p{
+    display:inline;
+    width: auto;
+}
+
+    main .card{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding: 20px;
+        margin: 20px ;
+        background-color: var(--blanco);
+        flex-grow : 0.6;
+        align-items: center;
+        box-shadow: 0px 0px 10px var(--sombra);
+        width: 100%;
+    }
+
+        .card .img{
+            border-radius: 10%; 
+            border:solid 1px var(--button);
+            box-shadow: 2px 2px 6px;
+            margin-bottom: 10%;
+        }
+
+        .card .datos{
+            border-top: 1px solid var(--button);
+            padding: 10% 0;
+            flex-wrap: wrap;
+        }
+        .datos .dato{
+            width: 100%;
+        }
+
+        @media (max-width: 43rem){/* Media Breakpoints para celus */
+            main .card{
+                max-width: 100%;
+            }
+        }
+        
+        @media (min-width: 43rem){/* Media Breakpoints para tablet */
+            main .card{
+                max-width: 40%;
+            }
+        }
+        
+        @media (min-width: 62rem){/* Media Breakpoints para Monitor */
+            main .card{
+                max-width: 20%;
+            }
+        }
+        
+        @media (min-width: 82rem){
+        }

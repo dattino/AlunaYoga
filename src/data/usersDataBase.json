@@ -1,0 +1,61 @@
+[
+ {
+  "id": 1,
+  "imagenUsuario": "user-1665259511203.jpg",
+  "nombre": "Luffy",
+  "email": "luffy@mugiwara.com",
+  "fecha_de_nacimiento": "2004-01-01",
+  "password": "$2a$10$L6/5MDYiu3ye5NgdpugGxupQ.nr.CFHHD3jFoYBHB1mchq4sJTsF6",
+  "cart": [
+   {}
+  ],
+  "apellido": "Monkey D."
+ },
+ {
+  "id": 2,
+  "imagenUsuario": "user-1665966320743.jpg",
+  "nombre": "Law",
+  "email": "law@heart.com",
+  "fecha_de_nacimiento": "2004-01-01",
+  "password": "$2a$10$kd3A5OH6epvqNWONqbrHluwIq3yHZsuhS3dgXEj2.MA.1K1d2Ww9i",
+  "cart": [
+   {}
+  ],
+  "apellido": "Trafalgar"
+ },
+ {
+  "id": 3,
+  "imagenUsuario": "user-1665260702227.jpg",
+  "nombre": "AndroideDieciocho",
+  "email": "androide18@redRibbon.com",
+  "fecha_de_nacimiento": "2004-01-01",
+  "password": "$2a$10$vVRZC/XpDDovBJHBZIiPtulCreCrMfkQd7K7Py.Rl2uVZaM/Fu7rq",
+  "cart": [
+   {}
+  ],
+  "apellido": "redRibbon"
+ },
+ {
+  "id": 4,
+  "imagenUsuario": "user-1665260857128.jpg",
+  "nombre": "Ela",
+  "email": "ela@yoga.com",
+  "fecha_de_nacimiento": "2004-01-01",
+  "password": "$2a$10$7r7iC2s3NroYl3s0K70fq.lapCrBAB/tpHE58pvdunyPLUSwqI6Mq",
+  "cart": [
+   {}
+  ]
+ },
+ {
+  "id": 5,
+  "imagenUsuario": "user-1665261297127.jpg",
+  "nombre": "Gonzzo",
+  "email": "gonzzo@gonzalo.com",
+  "fecha_de_nacimiento": "2004-01-01",
+  "password": "$2a$10$vQkpRKbRySPEwwFEeGJ8kuHBRUHYXuk4G22lc4AjYllp3lte8brKO",
+  "cart": [
+   {}
+  ],
+  "apellido": "Cortegozo"
+ }
+]

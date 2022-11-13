@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<%- include('../../partials/head', {title: 'Editar producto' , estilo:'/stylesheets/list-style.css'}) %>
+
+    <body>
+
+        <%- include('../../partials/header') %>
+
+            <main>
+                <div class="title">
+                    <h2 class="products-title">Listado de Categorias: <i></i></h2>
+                </div>
+                <div class="list">
+                    <% allCategorys.forEach(category=> { %>
+                        <% { %>
+                            <div class="list-field">
+                                <form action="/products/categorys/edit/<%= category.id %>?_method=PUT" method="post" class="list-form">
+                                    <!-- name -->
+                                    <div class="list-field-name">
+                                        <label for="nombre" class="form-label"></label>
+                                        <input type="text" name="nombre" id="nombre" value="<%= category.nombre %>">
+
+                                    </div>
+
+                                    <div class="button">
+                                        <button type="submit">Guardar</button>
+
+                                </form>
+                            </div>
+                            <% if(category.logicDelete === 1){ %> 
+                                <div class="button">
+                                    <form action="/products/categorys/delete/<%= category.id %>?_method=put" method="post">
+                                        <button type="submit">Borrar</button>
+                                    </form>
+                                </div>
+                                <% } else {%>
+                                <div class="button">
+                                    <form action="/products/categorys/restore/<%= category.id %>?_method=put" method="post">
+                                        <button type="submit">Restaurar</button>
+                                    </form>
+                                </div>
+                                <% } %>
+                </div>
+
+
+                <% } %>
+                    <% }) %>
+                        </div>
+                        <form action="/products/categorys/create" method="post" >
+                            <div>
+                                <h2 class="products-title"> Formulario de Creacion de Productos</i></h2>
+                            </div>
+                            <!-- name -->
+                            <div class="list-field-name">
+                                <label for="nombre" class="form-label"></label>
+                                <input type="text" name="nombre" id="nombre">
+                            </div>
+                            <div class="button">
+                                <button type="submit">Crear</button>
+                            </div>
+                        </form>
+            </main>
+
+            <%- include('../../partials/footer') %>
+  <script src="/js/products/categorysList.js"></script>
+    </body>
+
+</html>

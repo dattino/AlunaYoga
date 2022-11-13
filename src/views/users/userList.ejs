@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/head', {title: 'ListaDeUsuarios' , estilo:'/stylesheets/usersList-style.css'}) %>
+
+    <body>
+
+        <%- include('../partials/header') %>
+
+            <main>
+                <h1 class="title">Lista de Usarios</h1>
+                
+                
+                <% for (let i=0; i < users.length; i++) { %>
+                <div class="card">
+
+                    <img class="img" src="/images/users/profileImages/<%= users[i].avatar%>" alt="Imagen de Usuario">
+                    <div class="datos">
+                        <div clas="dato">
+                            <h4>Nombre: </h4>
+                            <p>
+                                <%= users[i].name %>
+                            </p>
+                        </div>
+                        <div clas="dato">
+                            <h4>Correo: </h4>
+                            <p>
+                                <%= users[i].email %>
+                            </p>
+                        </div>
+                        <div clas="dato">
+                            <h4>Admin: </h4>
+                            <p>
+                                <%= users[i].isAdmin %>
+                            </p>
+                        </div>
+                        <div clas="dato">
+                            <h4>Ativo: </h4>
+                            <p>
+                                <%= users[i].isActive %>
+                            </p>
+                        </div>
+                    </div>
+                    <button><a href="/users/detail/<%= users[i].id %>">Detalle</a></button>
+
+                </div>
+                <% } %>
+            </main>
+
+        <%- include('../partials/footer') %>
+        <script src="/js/users/userList.js"></script>
+    </body>
+
+</html>
