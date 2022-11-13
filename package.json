@@ -1,5 +1,5 @@
 {
-  "name": "alunayoga",
+  "name": "c",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -23,5 +23,18 @@
     "mysql2": "^2.3.3",
     "sequelize": "^6.21.4",
     "sequelize-cli": "^6.5.1"
-  }
+  },
+  "description": "Revisión despues de entrega:\r     Se agrega Dashboard con React",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dattino/AlunaYoga.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dattino/AlunaYoga/issues"
+  },
+  "homepage": "https://github.com/dattino/AlunaYoga#readme"
 }
