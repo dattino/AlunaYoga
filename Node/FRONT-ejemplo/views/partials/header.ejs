@@ -1,0 +1,106 @@
+<header>
+    <nav>
+        <ul class="listaMenu Izq">
+            <% if (locals.isLogged) { %>
+
+                <li>
+                    <a href="/users/profile/<%= locals.userLogged.id %>">
+                        <img src="/images/users/profileImages/<%= locals.userLogged.imagenUsuario %>"
+                            alt="imagen de imagenUsuario" 
+                            width="40" height="40 " 
+                            style="border-radius: 100%; border:solid 1px var(--button);"
+                        >
+                        <p>
+                            Hola <%= locals.userLogged.nombre%>
+                        </p>
+                    </a>
+                </li>
+                <li class="menu">
+                    <a href="/">
+                        <i class="fa-solid fa-bars"></i>
+                        <p>
+                            Menú 
+                        </p>
+                    </a>
+                </li>
+                <li class="home">
+                    <a href="/">
+                        <i class="fa-solid fa-house-chimney"></i>
+                        <p>
+                            Home 
+                        </p>
+                    </a>
+                </li>
+                <li class="products">
+                    <a href="/products">
+                        <i class="fa-solid fa-basket-shopping"></i>
+                        <p>
+                            Productos 
+                        </p>
+                    </a>
+                </li>
+                <li class="logout">
+                    <a href="/users/logout">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        <p>
+                            Logout 
+                        </p>
+                    </a>
+                </li>
+                <% }else{ %>
+                    <li class="menu">
+                        <a href="/">
+                            Menú 
+                            <i class="fa-solid fa-bars"></i>
+                        </a>
+                    </li>
+                    <li class="home">
+                        <a href="/">
+                            Home 
+                            <i class="fa-solid fa-house-chimney"></i>
+                        </a>
+                    </li>
+                    <li class="products">
+                        <a href="/products">
+                            Productos 
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </a>
+                    </li>
+                    <li class="products">
+                        <a href="/admins">
+                            <!-- <i class="fa-solid fa-basket-shopping"></i> -->
+                            <p>
+                                Admins
+                            </p>
+                        </a>
+                    </li>
+                    <li class="login">
+                        <a href="/users/login">
+                            Login 
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                        </a>
+                    </li>
+
+                    <% } %>
+        </ul>
+        <div class="menuHamburguesa">
+            <button><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </nav>
+    <div class="logo">
+        <a href="/">
+            <div class="imgLogo">
+                <img src="/images/logoPag/lotus_border.png" width="100%" alt="Logo-Aluna-Yoga">
+                <!-- <i class="fa-solid fa-om"></i> -->
+            </div>
+            <div class="textLogo">
+                <h1 class="nombreLogo">Aluna</h1>
+                <h2 class="nombreLogo">Yoga</h2>
+            </div>
+        </a>
+    </div>
+    <form class="SearchBar" name="search" action="/products/search/" method="GET">
+        <input type="text" name="search" placeholder="Buscar productos, marcas">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+</header>
