@@ -2,13 +2,7 @@ import React from 'react';
 import ChartRow from './ProductChartRow';
 import { useState, useEffect, useRef} from "react"
 
-let fetchu = fetch('http://localhost:3420/api/v1/products')
-.then(res => res.json())
-.then(data =>{
- let variable = data.allProducts
-   
-})
-.catch(error => console.log(error))
+
 
 
 let tableRowsData = [
@@ -40,7 +34,8 @@ function ProductChart (){
         fetch('http://localhost:3420/api/v1/products')
             .then(res => res.json())
             .then(data =>{
-                setProducts ( data.allProducts)
+                console.log(data)
+                setProducts ( [...data.allProducts])
                
             })
             .catch(error => console.log(error))

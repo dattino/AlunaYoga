@@ -21,7 +21,19 @@ let tableRowsData = [
 
 
 function UsersChart (){
+    const [users, setUsers] = useState(tableRowsData) 
 
+
+    useEffect(() => {
+        fetch('http://localhost:3420/api/v1/users')
+            .then(res => res.json())
+            .then(data =>{
+                console.log(data)
+                setUsers ( [...data.users])
+               
+            })
+            .catch(error => console.log(error))
+    }, [])
     return (
         /* <!-- DataTales Example --> */
         <div className="card shadow mb-4">
@@ -49,7 +61,7 @@ function UsersChart (){
                         </tfoot>
                         <tbody>
                             {
-                            tableRowsData.map( ( row , i) => {
+                            users.map( ( row , i) => {
                                 return <UsersChartRow { ...row} key={i}/>
                             })
                             }

@@ -1,7 +1,7 @@
 import React from 'react';
 import image from '../assets/images/aluna.png';
 import ContentWrapper from './ContentWrapper';
-import GenresInDb from './GenresInDb';
+
 import LastMovieInDb from './LastMovieInDb';
 import ContentRowMovies from './ContentRowMovies';
 import NotFound from './NotFound';
@@ -9,6 +9,7 @@ import {Link, Route, Switch} from 'react-router-dom';
 import SearchMovies from './SearchMovies';
 import ProductChart from './ProductChart';
 import UsersChart from './UsersChart';
+import Categorys from './Categorys';
 
 function SideBar(){
     return(
@@ -56,7 +57,7 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Categorias -->*/}
                 <li className="nav-item nav-link">
-                <Link className="nav-link" to="/GenresInDb">
+                <Link className="nav-link" to="/categorias">
                         <i className="fas fa-fw fa-table"></i>
                         <span>Categorias</span></Link>
                 </li>
@@ -92,8 +93,8 @@ function SideBar(){
                 <Route exact path="/usuarios">
                     <UsersChart />
                 </Route>
-                <Route path="/GenresInDb">
-                    <GenresInDb />
+                <Route path="/categorias">
+                    <Categorys />
                 </Route>
                 <Route path="/LastMovieInDb">
                     <LastMovieInDb />
