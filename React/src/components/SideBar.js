@@ -1,11 +1,15 @@
 import React from 'react';
-import image from '../assets/images/logo-DH.png';
+import image from '../assets/images/aluna.png';
 import ContentWrapper from './ContentWrapper';
-import GenresInDb from './GenresInDb';
+
 import LastMovieInDb from './LastMovieInDb';
 import ContentRowMovies from './ContentRowMovies';
 import NotFound from './NotFound';
 import {Link, Route, Switch} from 'react-router-dom';
+import SearchMovies from './SearchMovies';
+import ProductChart from './ProductChart';
+import UsersChart from './UsersChart';
+import Categorys from './Categorys';
 
 function SideBar(){
     return(
@@ -16,7 +20,7 @@ function SideBar(){
                 {/*<!-- Sidebar - Brand -->*/}
                 <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                     <div className="sidebar-brand-icon">
-                        <img className="w-100" src={image} alt="Digital House"/>
+                        <img className="w-50" src={image} alt="Digital House"/>
                     </div>
                 </a>
 
@@ -27,7 +31,7 @@ function SideBar(){
                 <li className="nav-item active">
                     <Link className="nav-link" to="/">
                         <i className="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard - DH movies</span></Link>
+                        <span>Dashboard - Aluna Yoga</span></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
@@ -36,26 +40,26 @@ function SideBar(){
                 {/*<!-- Heading -->*/}
                 <div className="sidebar-heading">Actions</div>
 
-                {/*<!-- Nav Item - Pages -->*/}
+                {/*<!-- Nav Item - Productos -->*/}
                 <li className="nav-item">
-                <Link className="nav-link" to="/GenresInDb">
+                <Link className="nav-link" to="/productos">
                         <i className="fas fa-fw fa-folder"></i>
-                        <span>Pages</span>
+                        <span>Productos</span>
                     </Link>
                 </li>
 
-                {/*<!-- Nav Item - Charts -->*/}
+                {/*<!-- Nav Item - Usuarios -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link" to="/LastMovieInDb">
+                    <Link className="nav-link" to="/usuarios">
                         <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Charts</span></Link>
+                        <span>Usuarios</span></Link>
                 </li>
 
-                {/*<!-- Nav Item - Tables -->*/}
+                {/*<!-- Nav Item - Categorias -->*/}
                 <li className="nav-item nav-link">
-                <Link className="nav-link" to="/ContentRowMovies">
+                <Link className="nav-link" to="/categorias">
                         <i className="fas fa-fw fa-table"></i>
-                        <span>Tables</span></Link>
+                        <span>Categorias</span></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
@@ -83,14 +87,23 @@ function SideBar(){
                 <Route exact path="/">
                     <ContentWrapper />
                 </Route>
-                <Route path="/GenresInDb">
-                    <GenresInDb />
+                <Route exact path="/productos">
+                    <ProductChart />
+                </Route>
+                <Route exact path="/usuarios">
+                    <UsersChart />
+                </Route>
+                <Route path="/categorias">
+                    <Categorys />
                 </Route>
                 <Route path="/LastMovieInDb">
                     <LastMovieInDb />
                 </Route>
                 <Route path="/ContentRowMovies">
                     <ContentRowMovies />
+                </Route>
+                <Route path="/SearchMovies">
+                    <SearchMovies />
                 </Route>
                 <Route component={NotFound} />
             </Switch>

@@ -17,30 +17,30 @@ const controlador = {
                         total: users.length,
                         url: 'api/v1/users'
                     },
-                users
+                    users
+                })
             })
-    })
-    .catch(error => {
-        console.log(error)
-        res.status(500).json({mensaje: 'Error de conexion'})
-    });
-},
-detail:(req, res) => {
-    db.Users.findByPk(req.params.id)
-    .then((user)=>{
-        return res.status(200).json({
-            meta: {
-                status: 200,
-                url: 'api/v1/users/detail'
-            },
-           user
-        })
-    })            
-    .catch(error => {
-        console.log(error)
-        res.status(500).json({mensaje: 'Error de conexion'})
-    });
+            .catch(error => {
+                console.log(error)
+                res.status(500).json({ mensaje: 'Error de conexion' })
+            });
+    },
+    detail: (req, res) => {
+        db.Users.findByPk(req.params.id)
+            .then((user) => {
+                return res.status(200).json({
+                    meta: {
+                        status: 200,
+                        url: 'api/v1/users/detail'
+                    },
+                    user
+                })
+            })
+            .catch(error => {
+                console.log(error)
+                res.status(500).json({ mensaje: 'Error de conexion' })
+            });
 
-}
+    }
 }
 module.exports = controlador;
