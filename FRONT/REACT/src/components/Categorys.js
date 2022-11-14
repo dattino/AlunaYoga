@@ -1,7 +1,11 @@
 import React from "react";
 import CategorysRow from "./CategorysRow"
+import { useState, useEffect, useRef} from "react"
+
+
+
 function Categorys() {
-  const [categorys, setCategorys] = useState([{name:"Indumentaria"},]) 
+  const [categorys, setCategorys] = useState([{nombre:"Indumentaria"},{nombre:"Clases"}]) 
 
 
   useEffect(() => {
