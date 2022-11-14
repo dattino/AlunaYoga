@@ -1,20 +1,27 @@
 import React from 'react';
-import ProductsChartRow from './ProdcutsChartRow';
-
-fetch('http://localhost:3420/api/v1/products')
-.then(response => response.json())
-.then(data => {
-  console.log(data);
-  // todos los productos
-  let dataProducts = data.allProducts;
-});
-
- let products =[
-    {name: "Ropa", finalPrice: 1000, discount: 10, stock: 100, logicDelete:"NO" }
- ]
+import UsersChartRow from './UsersChartRow';
+import { useState, useEffect, useRef} from "react"
+ 
 
 
-function ProductsChart (){
+let tableRowsData = [
+    {
+        name: 'Billy Elliot ',
+        id: '123',
+       email: 'Billy@elliot.com',
+
+    },
+    {
+        name: ' Monkey D. Garp ',
+        id: '124',
+        email: 'TeOdioColorado@GLOBALGOVERMANT.COM',
+    }
+    
+]
+
+
+function UsersChart (){
+
     return (
         /* <!-- DataTales Example --> */
         <div className="card shadow mb-4">
@@ -23,26 +30,27 @@ function ProductsChart (){
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
                             <tr>
+                                
                                 <th>Nombre</th>
-                                <th>Precio</th>
-                                <th>Descuento</th>
-                                <th>Stock</th>
-                                <th>Borrado</th>
+                                <th>ID</th>
+                                <th>Email</th>
+                              
+                                
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
+                               
                                 <th>Nombre</th>
-                                <th>Precio</th>
-                                <th>Descuento</th>
-                                <th>Stock</th>
-                                <th>Borrado</th>
+                                <th>ID</th>
+                                <th>Email</th>
+                             
                             </tr>
                         </tfoot>
                         <tbody>
                             {
-                            products.map( ( row , i) => {
-                                return <ProductsChartRow { ...row} key={i}/>
+                            tableRowsData.map( ( row , i) => {
+                                return <UsersChartRow { ...row} key={i}/>
                             })
                             }
 
@@ -55,4 +63,4 @@ function ProductsChart (){
     )
 }
 
-export default ProductsChart;
+export default UsersChart;

@@ -1,5 +1,5 @@
 import React from 'react';
-import imagenFondo from '../assets/images/notFoundBackgroun.jpg';
+import imagenFondo from '../assets/images/404.png';
 
 function NotFound(){
     return(
