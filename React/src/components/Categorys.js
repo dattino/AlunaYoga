@@ -1,22 +1,20 @@
 import React from "react";
 import CategorysRow from "./CategorysRow"
-import { useState, useEffect, useRef} from "react"
+import { useState, useEffect } from "react"
 
 
 
 function Categorys() {
-  const [categorys, setCategorys] = useState([{nombre:"Indumentaria"},{nombre:"Clases"}]) 
+  const [categorys, setCategorys] = useState([{ nombre: "Indumentaria" }, { nombre: "Clases" }])
 
 
   useEffect(() => {
-      fetch('http://localhost:3420/api/v1/products')
-          .then(res => res.json())
-          .then(data =>{
-              console.log(data.allCategorys)
-              setCategorys ( [...data.allCategorys])
-             
-          })
-          .catch(error => console.log(error))
+    fetch('http://localhost:3420/api/v1/products')
+      .then(res => res.json())
+      .then(data => {
+        setCategorys([...data.allCategorys])
+      })
+      .catch(error => console.log(error))
   }, [])
   return (
     <div className="col-lg-6 mb-4">
@@ -30,21 +28,21 @@ function Categorys() {
           <div className="row">
 
 
-              {
-                            categorys.map( ( row , i) => {
-                                return <CategorysRow { ...row} key={i}/>
-                            })
-                            }
-        
-           
-        
-           
-          
-            
-         
-         
-            
-          
+            {
+              categorys.map((row, i) => {
+                return <CategorysRow {...row} key={i} />
+              })
+            }
+
+
+
+
+
+
+
+
+
+
           </div>
         </div>
       </div>

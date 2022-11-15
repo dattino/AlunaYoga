@@ -1,6 +1,6 @@
 import React from 'react';
 import ChartRow from './ProductChartRow';
-import { useState, useEffect, useRef} from "react"
+import { useState, useEffect } from "react"
 
 
 
@@ -22,27 +22,24 @@ let tableRowsData = [
         discount: 3,
         stock: 100
     }
-    
+
 ]
 
 
-function ProductChart (){
-    const [products, setProducts] = useState(tableRowsData) 
+function ProductChart() {
+    const [products, setProducts] = useState(tableRowsData)
 
 
     useEffect(() => {
         fetch('http://localhost:3420/api/v1/products')
             .then(res => res.json())
-            .then(data =>{
-                console.log(data)
-                setProducts ( [...data.allProducts])
-               
+            .then(data => {
+                setProducts([...data.allProducts])
             })
             .catch(error => console.log(error))
     }, [])
-    console.log(products)
     return (
-      
+
         /* <!-- DataTales Example --> */
         <div className="card shadow mb-4">
             <div className="card-body">
@@ -50,19 +47,19 @@ function ProductChart (){
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
                             <tr>
-                                
+
                                 <th>Nombre</th>
                                 <th>ID</th>
                                 <th>Categoria</th>
                                 <th>Precio</th>
                                 <th>Descuento</th>
                                 <th>Stock</th>
-                                
+
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                               
+
                                 <th>Nombre</th>
                                 <th>ID</th>
                                 <th>Categoria</th>
@@ -73,9 +70,9 @@ function ProductChart (){
                         </tfoot>
                         <tbody>
                             {
-                            products.map( ( row , i) => {
-                                return <ChartRow { ...row} key={i}/>
-                            })
+                                products.map((row, i) => {
+                                    return <ChartRow {...row} key={i} />
+                                })
                             }
 
                         </tbody>
