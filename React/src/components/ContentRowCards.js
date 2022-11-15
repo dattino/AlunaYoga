@@ -45,8 +45,6 @@ function ContentRowCards() {
     }, [])
 
     if (products) {
-        console.log('products')
-        console.log(products)
         let oferta = 0
         products.map((product, i) => {
             if (product.discount > 0) {

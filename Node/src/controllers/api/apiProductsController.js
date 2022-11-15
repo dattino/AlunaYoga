@@ -43,11 +43,13 @@ const controller = {
                     return res.status(200).json({
                         meta: {
                             status: 200,
-                            total: allProducts.length,
+                            totalProductos: allProducts.length,
+                            totalCategorias: allCategorys.length,
+                            totalMarcas: allMarcas.length,
                             url: 'api/v1/products'
                         },
                     
-                        allProducts,
+                        allProducts, allCategorys, allMarcas
                       
                       
                     })

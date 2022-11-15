@@ -6,15 +6,15 @@ import { useState, useEffect} from "react"
 
 let tableRowsData = [
     {
-        name: 'Billy Elliot ',
-        id: '123',
-       email: 'Billy@elliot.com',
+        name: 'Cargando Nombre 1... ',
+        id: 'Cargando ID 1...',
+       email: 'Cargando Email 1...',
 
     },
     {
-        name: ' Monkey D. Garp ',
-        id: '124',
-        email: 'TeOdioColorado@GLOBALGOVERMANT.COM',
+        name: 'Cargando Nombre 2... ',
+        id: 'Cargando ID 2...',
+       email: 'Cargando Email 2...',
     }
     
 ]
