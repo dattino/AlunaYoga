@@ -7,20 +7,20 @@ import { useState, useEffect } from "react"
 
 let tableRowsData = [
     {
-        name: 'Billy Elliot ',
-        id: '123',
-        category_id: 'Indumentaria',
-        finalPrice: "1000",
-        discount: 2,
-        stock: 100
+        name: '... Cargando Nombre 1 ...',
+        id: '... Cargando Nombre 1 ...',
+        category_id: '... Cargando Categoria ...',
+        finalPrice: "... Cargando Precio Final ...",
+        discount: "... Cargando Descuento ...",
+        stock: "... Cargando Stock ..."
     },
     {
-        name: 'Curso Intensivo de ser Buen Marine, por Monkey D. Garp ',
-        id: '124',
-        category_id: 'Clases',
-        finalPrice: "1000",
-        discount: 3,
-        stock: 100
+        name: '... Cargando Nombre 2 ...',
+        id: '... Cargando Nombre 2 ...',
+        category_id: '... Cargando Categoria ...',
+        finalPrice: "... Cargando Precio Final ...",
+        discount: "... Cargando Descuento ...",
+        stock: "... Cargando Stock ..."
     }
 
 ]
