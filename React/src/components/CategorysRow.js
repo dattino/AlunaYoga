@@ -1,12 +1,13 @@
 import React from 'react';
 
 
-function ChartRow(props){
+function ChartRow(categoria, producto){
+
     return (
         <div className="col-lg-6 mb-4">
         <div className="card bg-dark text-white shadow">
-          <div className="card-body">{props.nombre} </div>
-          <p> Productos Totales: 10</p>
+          <div className="card-body">{categoria.nombre} </div>
+          <p> Productos Totales: {producto.total}</p>
         </div>
       </div>
      
