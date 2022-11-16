@@ -6,7 +6,7 @@ function ChartRow(props){
         <div className="col-lg-6 mb-4">
         <div className="card bg-dark text-white shadow">
           <div className="card-body">{props.nombre} </div>
-          <p> Productos Totales: 10</p>
+          <p> Productos Totales: {props.total}</p>
         </div>
       </div>
      
