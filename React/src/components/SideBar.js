@@ -10,6 +10,7 @@ import { Link, Route, Switch } from 'react-router-dom';
 import ProductChart from './ProductChart';
 import UsersChart from './UsersChart';
 import Categorys from './Categorys';
+import UserDetail from './UserDetail';
 
 function SideBar() {
     return (
@@ -78,6 +79,8 @@ function SideBar() {
                 </Route>
                 <Route path="/categorias">
                     <Categorys />
+                </Route>
+                <Route exact path="/user/detail/:id" component={UserDetail} >
                 </Route>
                 <Route component={NotFound} />
             </Switch>
