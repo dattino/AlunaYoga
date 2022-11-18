@@ -10,6 +10,7 @@ import { Link, Route, Switch } from 'react-router-dom';
 import ProductChart from './ProductChart';
 import UsersChart from './UsersChart';
 import Categorys from './Categorys';
+import ProductDetail from './ProductDetail';
 
 function SideBar() {
     return (
@@ -72,6 +73,9 @@ function SideBar() {
                 </Route>
                 <Route exact path="/productos">
                     <ProductChart />
+                </Route>
+                <Route exact path="/productos/1">
+                    <ProductDetail />
                 </Route>
                 <Route exact path="/usuarios">
                     <UsersChart />
