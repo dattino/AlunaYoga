@@ -21,7 +21,7 @@ function LastUserInDb(){
     
     console.log("usuario")
     console.log(users)
-
+    let ruta = '/user/detail/'+users.id ;
     let imagen = imagenFondo;
     let avatar = "http://localhost:3420/images/users/profileImages/" + users.avatar
     if (users.avatar){imagen = avatar};
@@ -42,7 +42,7 @@ function LastUserInDb(){
                     <p> Apellido: {users.lastName}</p>
                     <p> Email: {users.email}</p>
                     <p> Tipo de cuenta: {cuenta}</p>
-                    <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">Detalle del Usuario</a>
+                    <a className="btn btn-danger" target="_blank" rel="nofollow" href={ruta}>Detalle del Usuario</a>
                 </div>
             </div>
         </div>

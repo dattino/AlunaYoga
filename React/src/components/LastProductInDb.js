@@ -20,7 +20,7 @@ function LastProductInDb(){
     console.log(products)
     let imagen = imagenFondo
     if (products.image){imagen = imagenProducto}
- 
+    let ruta = '/product/detail/'+products.id ;
   
     return(
         <div className="col-lg-6 mb-4">
@@ -37,7 +37,7 @@ function LastProductInDb(){
                   
                     <p> Marca: {products.marcas.nombre}</p>
                     <p> $ {products.finalPrice}</p>
-                    <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">Detalle del Producto</a>
+                    <a className="btn btn-danger" target="_blank" rel="nofollow" href={ruta}>Detalle del Producto</a>
                 </div>
             </div>
         </div>

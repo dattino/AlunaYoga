@@ -75,6 +75,9 @@ function SideBar() {
                 <Route exact path="/productos">
                     <ProductChart />
                 </Route>
+                <Route exact path="/productos/1">
+                    <ProductDetail />
+                </Route>
                 <Route exact path="/usuarios">
                     <UsersChart />
                 </Route>
