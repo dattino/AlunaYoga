@@ -46,6 +46,7 @@ function UsersChart (){
                                 <th>Nombre</th>
                                 <th>ID</th>
                                 <th>Email</th>
+                                <th>Detalle</th>
                               
                                 
                             </tr>
@@ -56,6 +57,7 @@ function UsersChart (){
                                 <th>Nombre</th>
                                 <th>ID</th>
                                 <th>Email</th>
+                                <th>Detalle</th>
                              
                             </tr>
                         </tfoot>

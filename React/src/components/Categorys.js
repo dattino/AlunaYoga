@@ -34,6 +34,7 @@ function Categorys() {
           total: categoria.length,
         })
       }
+      return cartProps
     })
   }
 

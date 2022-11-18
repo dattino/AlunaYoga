@@ -7,21 +7,14 @@ import { useState, useEffect } from "react"
 
 let tableRowsData = [
     {
-        name: '... Cargando Nombre 1 ...',
-        id: '... Cargando Nombre 1 ...',
+        name: '... Cargando Nombre ...',
+        id: '... Cargando Nombre ...',
         category_id: '... Cargando Categoria ...',
         finalPrice: "... Cargando Precio Final ...",
         discount: "... Cargando Descuento ...",
         stock: "... Cargando Stock ..."
     },
-    {
-        name: '... Cargando Nombre 2 ...',
-        id: '... Cargando Nombre 2 ...',
-        category_id: '... Cargando Categoria ...',
-        finalPrice: "... Cargando Precio Final ...",
-        discount: "... Cargando Descuento ...",
-        stock: "... Cargando Stock ..."
-    }
+  
 
 ]
 
@@ -54,6 +47,7 @@ function ProductChart() {
                                 <th>Precio</th>
                                 <th>Descuento</th>
                                 <th>Stock</th>
+                                <th>Detalle</th>
 
                             </tr>
                         </thead>
@@ -66,6 +60,7 @@ function ProductChart() {
                                 <th>Precio</th>
                                 <th>Descuento</th>
                                 <th>Stock</th>
+                                <th>Detalle</th>
                             </tr>
                         </tfoot>
                         <tbody>
