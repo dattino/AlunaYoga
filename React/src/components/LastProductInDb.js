@@ -17,9 +17,13 @@ function LastProductInDb(){
             })
             .catch(error => console.log(error))
     }, [])
-    console.log(products)
+
     let imagen = imagenFondo
-    if (products.image){imagen = imagenProducto}
+    
+    let imagenProducto = "http://localhost:3420/images/products/"+products.image
+    if (products.image){
+        imagen = imagenProducto
+    }
     let ruta = '/product/detail/'+products.id ;
   
     return(
