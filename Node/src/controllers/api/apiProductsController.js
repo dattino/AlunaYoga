@@ -87,14 +87,27 @@ const controller = {
                 where:{ name: { [Op.like]: '%' + `${search}`  + '%' }},
                 include:[{association:"categorys"},{association:"marcas"},{association:"talles"}]
             })
-            Promise.all([promProducts, promCategorys, promMarcas])
-            .then(([products, allCategorys, allMarcas])=>{
-                res.render('products/products',{ products, allCategorys, allMarcas});
-            })
-            .catch(error => res.send(error))
-            
-         
-        },
+            Promise.all([promProducts, promCategorys, promMarcas,  ])
+            .then(([allProducts, allCategorys, allMarcas])=>{
+                return res.status(200).json({
+                    meta: {
+                        status: 200,
+                        totalProductos: allProducts.length,
+                        totalCategorias: allCategorys.length,
+                        totalMarcas: allMarcas.length,
+                        url: 'api/v1/products'
+                    },
+                
+                    allProducts, allCategorys, allMarcas
+                  
+                  
+                })
+            })            
+            .catch(error => {
+                console.log(error)
+                res.status(500).json({mensaje: 'Error de conexion'})
+            });
+    },
         //---------------------------- Menu----------------------------------
         // menuCategory: (req, res)=>{   
         //     let promCategorys = categorys.findAll()

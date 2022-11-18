@@ -1,6 +1,6 @@
 import React from 'react';
 import imagenFondo from '../assets/images/default.jpg';
-import imagenProducto from '../assets/images/1667325872513-Master Vinyasa.jpg';
+
 import { useState, useEffect } from "react"
 
 
@@ -19,11 +19,10 @@ function LastProductInDb(){
     }, [])
 
     let imagen = imagenFondo
+    let imagenProducto=  "http://localhost:3420/images/products/" + products.image
+    if (products.image){imagen = imagenProducto}
     
-    let imagenProducto = "http://localhost:3420/images/products/"+products.image
-    if (products.image){
-        imagen = imagenProducto
-    }
+
     let ruta = '/product/detail/'+products.id ;
   
     return(
