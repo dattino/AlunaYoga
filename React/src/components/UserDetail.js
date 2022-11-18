@@ -41,8 +41,8 @@ function UserDetail(props) {
        tableRowsData.isAdmin = tableRowsData.isAdmin? 'Sí' : 'No';
        tableRowsData.isActive = tableRowsData.isActive? 'Sí' : 'No';
 
-        console.log(userFind.name)
     }
+    let imagen= "http://localhost:3420/images/users/profileImages/" + tableRowsData.avatar
     return (
         /* <!-- DataTales Example --> */
         <div className="card shadow mb-4">
@@ -61,18 +61,6 @@ function UserDetail(props) {
                                 <th>Nombre Imagen</th>
                             </tr>
                         </thead>
-                        <tfoot>
-                            <tr>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>ID</th>
-                                <th>Email</th>
-                                <th>Cumpleaños</th>
-                                <th>¿Es admin?</th>
-                                <th>¿Está activo?</th>
-                                <th>Nombre Imagen</th>
-                            </tr>
-                        </tfoot>
                         <tbody>
                             <tr>
                                 <td>{tableRowsData.name}</td>
@@ -82,7 +70,7 @@ function UserDetail(props) {
                                 <td>{tableRowsData.birthdate}</td>
                                 <td>{tableRowsData.isAdmin}</td>
                                 <td>{tableRowsData.isActive}</td>
-                                <td>{tableRowsData.avatar}</td>
+                                <td><a href={imagen} target="_blank" rel="noopener noreferrer"> {tableRowsData.avatar} </a></td>
                             </tr>
                         </tbody>
                         

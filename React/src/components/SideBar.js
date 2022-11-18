@@ -11,6 +11,7 @@ import ProductChart from './ProductChart';
 import UsersChart from './UsersChart';
 import Categorys from './Categorys';
 import UserDetail from './UserDetail';
+import ProductDetail from './ProductDetail';
 
 function SideBar() {
     return (
@@ -81,6 +82,8 @@ function SideBar() {
                     <Categorys />
                 </Route>
                 <Route exact path="/user/detail/:id" component={UserDetail} >
+                </Route>
+                <Route exact path="/product/detail/:id" component={ProductDetail} >
                 </Route>
                 <Route component={NotFound} />
             </Switch>

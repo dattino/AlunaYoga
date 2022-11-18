@@ -23,7 +23,8 @@ function LastUserInDb(){
     console.log(users)
 
     let imagen = imagenFondo;
-    if (users.avatar){imagen = imagenUser};
+    let avatar = "http://localhost:3420/images/users/profileImages/" + users.avatar
+    if (users.avatar){imagen = avatar};
     let cuenta = "Estandar";
     if (users.isAdmin){cuenta = "Admin"};
     return(
@@ -35,7 +36,7 @@ function LastUserInDb(){
                 <div className="card-body">
                     <div className="text-center">
                         <h1> {users.name}</h1>
-                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={imagen}  alt=" Imagen Ultimo Usuario"/>
+                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 20 +'rem'}} src={imagen}  alt=" Imagen Ultimo Usuario"/>
                     </div>
                     <p> Nombre: {users.name}</p>
                     <p> Apellido: {users.lastName}</p>
